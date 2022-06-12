@@ -21,14 +21,15 @@ int main()
         printf("child group id is %d\n", getpgid(0));
         printf("child session id is %d\n", getsid(0));
         sleep(2);
-        // 设置为组长进程
+        // 创建一个会话， 会长是创建者  
         setsid();
         printf("-----------------\n");
         printf("child PID = %d\n", getpid());
         printf("child group id is %d\n", getpgid(0));
         printf("child session id is %d\n", getsid(0));
-        sleep(5);
-
+        sleep(20);
+// ps ajx
+// tty： tty7文字终端，？是无终端，pts是虚拟终端
     }
     return 0;
 }
