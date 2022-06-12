@@ -16,7 +16,8 @@ int main()
     {
         printf("-----------------\n");
         printf("child PID = %d\n", getpid());
-        // 如果参数pid 为0, 则会取得目前进程的组识别码
+        // fork出的子进程 组id 是 父进程
+        // 如果参数pid 为0, 则会取得目前进程的组识别码, 0本组
         printf("child group id is %d\n", getpgid(0));
         printf("child session id is %d\n", getsid(0));
         sleep(2);
